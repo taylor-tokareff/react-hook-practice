@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import { fetchQuote } from '../services/TwinPeaksAPI';
 import QuoteDetail from '../components/Quote';
 import Button from '../components/Load';

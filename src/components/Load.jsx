@@ -1,30 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { fetchQuote } from './Quote';
 
-
-const QuoteDetail = () => {
-
-  const [quote, setQuote] = useState();
-
-  const getQuote = async () => {
-
-    const resQuote = await fetchQuote();
-    setQuote(resQuote);
-  };
-
+const Button = ({ onClick }) => {
 
   return (
-    <div>
-      {quote ? <p>{quote.quoteText}</p> : <p>Press button to get quote</p>}
-      <button onClick={getQuote}>Get Quote</button>
-    </div>
+
+    <button onClick={onClick}>Get Quote</button>
   );
 };
 
-QuoteDetail.propTypes = {
-  quoteText: PropTypes.string.isRequired
+Button.propTypes = {
+  onClick: PropTypes.function.isRequired
 };
 
+export default Button;
 
-export default QuoteDetail;
